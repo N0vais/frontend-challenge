@@ -6,5 +6,5 @@ export interface NFTFilters {
   page?: number;
   minPrice?: string;
   maxPrice?: string;
-  view?: 'home' | 'mercado' | 'carrinho' | 'pagamento'| 'perfil'; // 👈 Adicionado
+  view?: 'home' | 'mercado' | 'carrinho' | 'pagamento'| 'perfil' | 'sobre'; 
 }
