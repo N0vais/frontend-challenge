@@ -78,7 +78,8 @@ export const Header: React.FC = () => {
           ...prev,
           // Mantém a sua regra: 'home' vira undefined na URL, as outras viram o nome da view
           view: item.view === 'home' ? undefined : item.view,
-        })}
+          } as unknown as Record<string, string | undefined>)
+        }
         className={`relative h-full flex items-center transition-colors duration-200 cursor-pointer ${
           isActive ? 'text-[#D28A4C] font-semibold' : 'text-[#A89F91] hover:text-[#F3E5D8]'
         }`}
@@ -197,8 +198,8 @@ export const Header: React.FC = () => {
                 to="/"
                 search={(prev) => ({
                   ...prev,
-                  view: item.view === 'home' ? undefined : item.view,
-                })}
+                  vview: item.view === 'home' ? undefined : item.view,
+                  } as unknown as Record<string, string | undefined>)}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={`font-semibold cursor-pointer ${
                   isActive ? 'text-[#D28A4C]' : 'text-[#A89F91]'
