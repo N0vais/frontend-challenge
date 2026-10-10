@@ -6,12 +6,12 @@ export const ProtectedRoute: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
 
   useEffect(() => {
-    // 1. Checa sessão inicial
+    //  Checa sessão inicial
     supabase.auth.getSession().then(({ data: { session } }) => {
       setIsAuthenticated(!!session);
     });
 
-    // 2. Escuta mudanças de estado (login / logout)
+    //  Escuta mudanças de estado (login / logout)
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
       setIsAuthenticated(!!session);
     });

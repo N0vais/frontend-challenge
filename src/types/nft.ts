@@ -1,4 +1,3 @@
-// src/types/nft.ts
 export interface NFTFilters {
   search?: string;
   category?: string;
@@ -6,5 +5,14 @@ export interface NFTFilters {
   page?: number;
   minPrice?: string;
   maxPrice?: string;
-  view?: 'home' | 'mercado' | 'carrinho' | 'pagamento'| 'perfil' | 'sobre'; 
+  view?: 'home' | 'mercado' | 'carrinho' | 'pagamento' | 'perfil' | 'sobre';
 }
+
+export type ViewType =
+  | 'home'
+  | 'mercado'
+  | 'carrinho'
+  | 'pagamento'
+  | 'perfil'
+  | 'sobre'
+  | 'login'; 

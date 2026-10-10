@@ -23,7 +23,7 @@ const ARTICLES_DATA: Article[] = [
     readTime: 'Leitura de 6 min',
     title: 'Como funciona a propriedade de NFTs',
     description: 'Aprenda a colecionar, negociar e verificar ativos digitais.',
-    image: heroMonkeyImage ,
+    image: heroMonkeyImage,
     link: '#',
   },
   {

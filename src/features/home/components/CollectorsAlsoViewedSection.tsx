@@ -98,11 +98,10 @@ export const CollectorsAlsoViewedSection: React.FC = () => {
               <button
                 key={dotIndex}
                 onClick={() => setActivePageIndex(dotIndex)}
-                className={`w-2.5 h-2.5 rounded-full transition-all cursor-pointer border ${
-                  isActive
+                className={`w-2.5 h-2.5 rounded-full transition-all cursor-pointer border ${isActive
                     ? 'bg-[#D28A4C] border-[#D28A4C]'
                     : 'bg-transparent border-[#3D3024] hover:border-[#D28A4C]'
-                }`}
+                  }`}
                 aria-label={`Página ${dotIndex + 1}`}
               />
             );

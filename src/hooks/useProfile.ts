@@ -15,11 +15,11 @@ export const useProfile = () => {
     const fetchProfile = async () => {
       try {
         setLoading(true);
-        // 1. Pega o usuário autenticado na sessão atual
+        // Pega o usuário autenticado na sessão atual
         const { data: { user } } = await supabase.auth.getUser();
 
         if (user) {
-          // 2. Busca os dados da tabela pública 'profiles' usando o ID do usuário
+          // Busca os dados da tabela pública 'profiles' usando o ID do usuário
           const { data, error } = await supabase
             .from('profiles')
             .select('id, username')

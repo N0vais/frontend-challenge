@@ -100,7 +100,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 font-mono text-[#F3E5D8]">
       <div className="relative w-full max-w-[460px] bg-[#140D0A] border border-[#261E17] rounded-2xl p-8 shadow-2xl overflow-hidden border-b-[6px] border-b-[#D28A4C]">
-        
+
         {/* Botão Fechar */}
         <button
           onClick={onClose}
@@ -117,9 +117,8 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
           <button
             type="button"
             onClick={() => handleModeSwitch('login')}
-            className={`cursor-pointer transition-colors ${
-              mode === 'login' ? 'text-[#D28A4C]' : 'text-[#A89F91] hover:text-white'
-            }`}
+            className={`cursor-pointer transition-colors ${mode === 'login' ? 'text-[#D28A4C]' : 'text-[#A89F91] hover:text-white'
+              }`}
           >
             Entrar
           </button>
@@ -127,9 +126,8 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
           <button
             type="button"
             onClick={() => handleModeSwitch('register')}
-            className={`cursor-pointer transition-colors ${
-              mode === 'register' ? 'text-[#D28A4C]' : 'text-[#A89F91] hover:text-white'
-            }`}
+            className={`cursor-pointer transition-colors ${mode === 'register' ? 'text-[#D28A4C]' : 'text-[#A89F91] hover:text-white'
+              }`}
           >
             Criar conta
           </button>
@@ -238,8 +236,8 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
               {isLoading
                 ? 'Processando...'
                 : mode === 'login'
-                ? 'Entrar'
-                : 'Criar conta'}
+                  ? 'Entrar'
+                  : 'Criar conta'}
             </button>
           </div>
         </form>

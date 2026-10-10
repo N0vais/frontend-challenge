@@ -10,7 +10,7 @@ export const NFTCatalog: React.FC<NFTCatalogProps> = ({ filters, onFilterChange 
   return (
     <div className="p-6 text-[#F3E5D8] bg-[#0F0C08] min-h-screen">
       <h1 className="text-2xl font-bold text-[#D4A373] mb-4">Catálogo de NFTs</h1>
-      
+
       {/* Campo de Busca de Teste */}
       <div className="mb-6">
         <input

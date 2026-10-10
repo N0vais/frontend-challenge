@@ -1,5 +1,6 @@
 import { createRootRoute, Outlet } from '@tanstack/react-router';
 import { Header } from '@/components/layout/Header';
+import { BottomNav } from '@/components/layout/BottomNav';
 
 export const Route = createRootRoute({
   component: () => (
@@ -8,6 +9,7 @@ export const Route = createRootRoute({
       <main className="flex-1">
         <Outlet />
       </main>
+      <BottomNav />
     </div>
   ),
 });

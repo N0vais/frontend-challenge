@@ -8,15 +8,15 @@ import { useCart } from '@/context/CartContext';
 import { MOCK_NFTS } from '@/data/nfts';
 
 export const MarketplaceDetailsSection: React.FC = () => {
-  // 1. Lê o ID da URL
+  // Lê o ID da URL
   const searchParams = useSearch({ strict: false }) as { nftId?: string };
   const currentNftId = searchParams.nftId || 'emerald-ape-043';
 
-  // 2. Busca o NFT atual no catálogo
+  // Busca o NFT atual no catálogo
   const currentNft =
     MOCK_NFTS.find((item) => item.id === currentNftId) || MOCK_NFTS[0];
 
-  // 3. Padrão de Reset de Estado ao Mudar de NFT (sem useEffect)
+  // Padrão de Reset de Estado ao Mudar de NFT (sem useEffect)
   const [prevNftId, setPrevNftId] = useState(currentNftId);
   const [selectedImage, setSelectedImage] = useState(currentNft.image);
   const [selectedEdition, setSelectedEdition] = useState(currentNft.editions[0] || '1/50');
@@ -85,8 +85,8 @@ export const MarketplaceDetailsSection: React.FC = () => {
               type="button"
               onClick={() => setSelectedImage(img)}
               className={`w-20 h-20 sm:w-24 sm:h-24 lg:w-full lg:h-24 rounded-xl overflow-hidden border-2 transition-all cursor-pointer shrink-0 ${selectedImage === img
-                  ? 'border-[#D28A4C]'
-                  : 'border-[#261E17] hover:border-[#3D3024]'
+                ? 'border-[#D28A4C]'
+                : 'border-[#261E17] hover:border-[#3D3024]'
                 }`}
             >
               <img
@@ -148,8 +148,8 @@ export const MarketplaceDetailsSection: React.FC = () => {
                   type="button"
                   onClick={() => setSelectedEdition(ed)}
                   className={`px-3 py-1 rounded-full text-xs font-bold border transition-all cursor-pointer ${selectedEdition === ed
-                      ? 'border-[#D28A4C] text-[#D28A4C] bg-[#D28A4C]/10'
-                      : 'border-[#3D3024] text-[#A89F91] hover:border-[#D28A4C]'
+                    ? 'border-[#D28A4C] text-[#D28A4C] bg-[#D28A4C]/10'
+                    : 'border-[#3D3024] text-[#A89F91] hover:border-[#D28A4C]'
                     }`}
                 >
                   {ed}
@@ -189,8 +189,8 @@ export const MarketplaceDetailsSection: React.FC = () => {
                 type="button"
                 onClick={handleBuy}
                 className={`flex-1 font-bold text-xs py-3 rounded-lg transition-all cursor-pointer uppercase ${addedFeedback
-                    ? 'bg-emerald-600 text-white'
-                    : 'bg-[#D28A4C] hover:bg-[#E5B484] text-[#0F0C08]'
+                  ? 'bg-emerald-600 text-white'
+                  : 'bg-[#D28A4C] hover:bg-[#E5B484] text-[#0F0C08]'
                   }`}
               >
                 {addedFeedback ? 'ADICIONADO AO CARRINHO ✓' : 'COMPRAR'}
@@ -200,8 +200,8 @@ export const MarketplaceDetailsSection: React.FC = () => {
                 type="button"
                 onClick={() => toggleFavorite(currentNft.id)}
                 className={`flex items-center justify-center gap-2 border text-xs font-bold py-3 px-4 rounded-lg transition-all cursor-pointer ${active
-                    ? 'border-[#D28A4C] bg-[#D28A4C]/10 text-[#D28A4C]'
-                    : 'border-[#3D3024] text-[#F3E5D8]'
+                  ? 'border-[#D28A4C] bg-[#D28A4C]/10 text-[#D28A4C]'
+                  : 'border-[#3D3024] text-[#F3E5D8]'
                   }`}
               >
                 <span>{active ? 'Favoritado' : 'Favoritar'}</span>
@@ -252,24 +252,24 @@ export const MarketplaceDetailsSection: React.FC = () => {
             {/* Detalhes Técnicos Dinâmicos */}
             <div >
               <strong className="text-white font-mono block mb-1">Token ID:</strong>
-                <p>Cunhado na Ethereum com procedência imutável e metadados armazenados no IPFS {currentNft.tokenId}</p>
+              <p>Cunhado na Ethereum com procedência imutável e metadados armazenados no IPFS {currentNft.tokenId}</p>
             </div>
 
-              <div>
-                <strong className="text-white font-mono block mb-1">Contrato:</strong>
-                <p>{currentNft.collection} Direitos autorais do criador: 5% nas vendas secundárias, pagos automaticamente pelos mercados compatíveis.</p>
-              </div>
+            <div>
+              <strong className="text-white font-mono block mb-1">Contrato:</strong>
+              <p>{currentNft.collection} Direitos autorais do criador: 5% nas vendas secundárias, pagos automaticamente pelos mercados compatíveis.</p>
+            </div>
 
-              <div>
-                <strong className="text-white font-mono block mb-1">Preço Atual:</strong>
-                <p className="text-[#D28A4C] font-mono font-bold">{currentNft.price} 0x7A42...19E0 • Contrato inteligente ERC-721 verificado.</p>
-              </div>
+            <div>
+              <strong className="text-white font-mono block mb-1">Preço Atual:</strong>
+              <p className="text-[#D28A4C] font-mono font-bold">{currentNft.price} 0x7A42...19E0 • Contrato inteligente ERC-721 verificado.</p>
+            </div>
 
-              <div className="bg-[#1A1510] border border-[#261E17] rounded-xl p-4 space-y-1">
-                <strong className="text-white font-mono block text-xs">Edição Selecionada:</strong>
-                <p className="text-white font-mono">{selectedEdition}</p>
-              </div>
-            
+            <div className="bg-[#1A1510] border border-[#261E17] rounded-xl p-4 space-y-1">
+              <strong className="text-white font-mono block text-xs">Edição Selecionada:</strong>
+              <p className="text-white font-mono">{selectedEdition}</p>
+            </div>
+
 
             {/* Informações da Rede e do Contrato Inteligente */}
             <div className="space-y-3 pt-2">

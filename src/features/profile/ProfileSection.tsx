@@ -5,7 +5,7 @@ type TabType = 'dados' | 'carteiras' | 'atividade' | 'interesse' | 'ofertas' | '
 
 export const ProfileSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState<TabType>('dados');
- const [showNewPassword, setShowNewPassword] = useState(false);
+  const [showNewPassword, setShowNewPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   // Estados de feedback e carregamento
@@ -32,7 +32,7 @@ export const ProfileSection: React.FC = () => {
     confirmPassword: '',
   });
 
-  // 1. Buscar dados do usuário logado ao carregar
+  // Buscar dados do usuário logado ao carregar
   useEffect(() => {
     const fetchUserProfile = async () => {
       const { data: { user } } = await supabase.auth.getUser();
@@ -78,11 +78,11 @@ export const ProfileSection: React.FC = () => {
     try {
       setIsLoggingOut(true);
 
-      // 1. Desconecta no Supabase
+      // Desconecta no Supabase
       const { error } = await supabase.auth.signOut();
       if (error) throw error;
 
-      // 2. Redireciona diretamente para a rota inicial garantindo o carregamento da HomePage
+      // Redireciona diretamente para a rota inicial garantindo o carregamento da HomePage
       window.location.href = '/?view=home';
     } catch (err) {
       console.error('Erro ao encerrar sessão:', err);
@@ -214,8 +214,8 @@ export const ProfileSection: React.FC = () => {
   return (
     <section className="w-full bg-[#0F0C08] min-h-screen text-[#F3E5D8] font-mono py-8 px-4 sm:px-8">
       <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        
-        {/* ================= BARRA LATERAL (3 COLS) ================= */}
+
+        {/* BARRA LATERAL (3 COLS)  */}
         <aside className="lg:col-span-3 bg-[#1A1510] border border-[#261E17] rounded-2xl p-6 space-y-6">
           <h2 className="text-sm font-bold text-white uppercase tracking-wider mb-2">
             Meu perfil
@@ -225,11 +225,10 @@ export const ProfileSection: React.FC = () => {
             <button
               type="button"
               onClick={() => setActiveTab('dados')}
-              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all cursor-pointer ${
-                activeTab === 'dados'
+              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all cursor-pointer ${activeTab === 'dados'
                   ? 'text-[#D28A4C] bg-[#261E17]/50 font-bold border-l-2 border-[#D28A4C]'
                   : 'text-[#A89F91] hover:text-white'
-              }`}
+                }`}
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -240,11 +239,10 @@ export const ProfileSection: React.FC = () => {
             <button
               type="button"
               onClick={() => setActiveTab('carteiras')}
-              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all cursor-pointer ${
-                activeTab === 'carteiras'
+              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all cursor-pointer ${activeTab === 'carteiras'
                   ? 'text-[#D28A4C] bg-[#261E17]/50 font-bold border-l-2 border-[#D28A4C]'
                   : 'text-[#A89F91] hover:text-white'
-              }`}
+                }`}
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -256,11 +254,10 @@ export const ProfileSection: React.FC = () => {
             <button
               type="button"
               onClick={() => setActiveTab('atividade')}
-              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all cursor-pointer ${
-                activeTab === 'atividade'
+              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all cursor-pointer ${activeTab === 'atividade'
                   ? 'text-[#D28A4C] bg-[#261E17]/50 font-bold border-l-2 border-[#D28A4C]'
                   : 'text-[#A89F91] hover:text-white'
-              }`}
+                }`}
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
@@ -271,11 +268,10 @@ export const ProfileSection: React.FC = () => {
             <button
               type="button"
               onClick={() => setActiveTab('interesse')}
-              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all cursor-pointer ${
-                activeTab === 'interesse'
+              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all cursor-pointer ${activeTab === 'interesse'
                   ? 'text-[#D28A4C] bg-[#261E17]/50 font-bold border-l-2 border-[#D28A4C]'
                   : 'text-[#A89F91] hover:text-white'
-              }`}
+                }`}
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -286,11 +282,10 @@ export const ProfileSection: React.FC = () => {
             <button
               type="button"
               onClick={() => setActiveTab('ofertas')}
-              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all cursor-pointer ${
-                activeTab === 'ofertas'
+              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all cursor-pointer ${activeTab === 'ofertas'
                   ? 'text-[#D28A4C] bg-[#261E17]/50 font-bold border-l-2 border-[#D28A4C]'
                   : 'text-[#A89F91] hover:text-white'
-              }`}
+                }`}
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
@@ -301,11 +296,10 @@ export const ProfileSection: React.FC = () => {
             <button
               type="button"
               onClick={() => setActiveTab('arquivos')}
-              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all cursor-pointer ${
-                activeTab === 'arquivos'
+              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all cursor-pointer ${activeTab === 'arquivos'
                   ? 'text-[#D28A4C] bg-[#261E17]/50 font-bold border-l-2 border-[#D28A4C]'
                   : 'text-[#A89F91] hover:text-white'
-              }`}
+                }`}
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -316,11 +310,10 @@ export const ProfileSection: React.FC = () => {
             <button
               type="button"
               onClick={() => setActiveTab('suporte')}
-              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all cursor-pointer ${
-                activeTab === 'suporte'
+              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all cursor-pointer ${activeTab === 'suporte'
                   ? 'text-[#D28A4C] bg-[#261E17]/50 font-bold border-l-2 border-[#D28A4C]'
                   : 'text-[#A89F91] hover:text-white'
-              }`}
+                }`}
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
@@ -330,7 +323,7 @@ export const ProfileSection: React.FC = () => {
           </nav>
 
           <div className="pt-4 border-t border-[#261E17]">
-            {/* 🔴 BOTÃO SAIR INTEGRADO COM O SUPABASE */}
+            {/* BOTÃO SAIR INTEGRADO COM O SUPABASE */}
             <button
               type="button"
               onClick={handleLogout}
@@ -345,21 +338,20 @@ export const ProfileSection: React.FC = () => {
           </div>
         </aside>
 
-        {/* ================= CONTEÚDO PRINCIPAL (9 COLS) ================= */}
+        {/*  CONTEÚDO PRINCIPAL (9 COLS)  */}
         <main className="lg:col-span-9">
           {activeTab === 'dados' && (
             <form onSubmit={handleSave} className="space-y-8">
-              
+
               {/* Caixas de Alerta / Feedback */}
               {feedback && (
                 <div
-                  className={`p-4 rounded-xl text-xs font-bold border transition-all ${
-                    feedback.type === 'success'
+                  className={`p-4 rounded-xl text-xs font-bold border transition-all ${feedback.type === 'success'
                       ? 'bg-emerald-950/40 border-emerald-800/60 text-emerald-400'
                       : feedback.type === 'warning'
-                      ? 'bg-amber-950/40 border-amber-800/60 text-amber-400'
-                      : 'bg-rose-950/40 border-rose-800/60 text-rose-400'
-                  }`}
+                        ? 'bg-amber-950/40 border-amber-800/60 text-amber-400'
+                        : 'bg-rose-950/40 border-rose-800/60 text-rose-400'
+                    }`}
                 >
                   {feedback.message}
                 </div>

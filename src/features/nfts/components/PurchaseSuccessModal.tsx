@@ -47,7 +47,7 @@ export const PurchaseSuccessModal: React.FC<PurchaseSuccessModalProps> = ({
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 font-mono text-[#F3E5D8]">
       {/* Container Principal do Modal */}
       <div className="relative w-full max-w-[560px] bg-[#140D0A] border border-[#261E17] rounded-2xl p-8 shadow-2xl overflow-hidden border-b-[6px] border-b-[#D28A4C]">
-        
+
         {/* Botão Fechar (X) */}
         <button
           onClick={onClose}
@@ -94,7 +94,7 @@ export const PurchaseSuccessModal: React.FC<PurchaseSuccessModalProps> = ({
         {/* Detalhes da Transação */}
         <div className="space-y-4 my-6">
           <h3 className="text-xs font-bold text-white">Detalhes da transação</h3>
-          
+
           <div className="flex justify-between text-[11px] text-[#A89F91] pb-1 border-b border-[#261E17]">
             <span>NFTs</span>
             <div className="flex gap-12">

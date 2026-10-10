@@ -71,7 +71,7 @@ export const CartSection: React.FC = () => {
           <span>Mercado</span> <span className="mx-2">/</span>{' '}
           <span className="text-[#D28A4C]">Carrinho</span>
         </div>
-        
+
         <button
           type="button"
           onClick={clearCart}
@@ -82,7 +82,6 @@ export const CartSection: React.FC = () => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-        {/* ================= LADO ESQUERDO: LISTA DE NFTS (7 COLS) ================= */}
         <div className="lg:col-span-7 space-y-4">
           {/* Cabeçalho da Tabela */}
           <div className="grid grid-cols-12 text-xs font-bold text-[#A89F91] pb-2 border-b border-[#261E17]">
@@ -177,7 +176,7 @@ export const CartSection: React.FC = () => {
           })}
         </div>
 
-        {/* ================= LADO DIREITO: RESUMO DA CARTEIRA (5 COLS) ================= */}
+        {/*  LADO DIREITO: RESUMO DA CARTEIRA (5 COLS)  */}
         <div className="lg:col-span-5 space-y-6 pl-0 lg:pl-6">
           <h2 className="text-base font-bold text-white uppercase tracking-wider">
             Resumo da carteira

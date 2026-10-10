@@ -27,10 +27,10 @@ export const WalletsTab: React.FC = () => {
 
   return (
     <div className="space-y-8 font-mono text-[#F3E5D8]">
-      
-      {/* ================= CARTEIRA PRINCIPAL ================= */}
+
+      {/*CARTEIRA PRINCIPAL */}
       <form onSubmit={handleSave} className="space-y-6">
-        
+
         {/* Cabeçalho da Seção */}
         <div className="flex items-center justify-between">
           <div>
@@ -51,7 +51,7 @@ export const WalletsTab: React.FC = () => {
 
         {/* Formulário Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
-          
+
           {/* Nome de exibição */}
           <div>
             <label className="text-xs block mb-1.5">

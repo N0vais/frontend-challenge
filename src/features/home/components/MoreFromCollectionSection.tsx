@@ -6,13 +6,13 @@ export const MoreFromCollectionSection: React.FC = () => {
   const navigate = useNavigate();
   const [activePageIndex, setActivePageIndex] = useState(1);
 
-  // 🟢 Função ajustada com 'as const' e tipagem estrita do TanStack Router
+  // Função ajustada com 'as const' e tipagem estrita do TanStack Router
   const handleSelectNFT = (nft: NFTItem) => {
     navigate({
       to: '/',
       search: (old: { search?: string; category?: string; view?: string }) => ({
         ...old,
-        view: 'mercado' as const, // 👈 'as const' informa ao TypeScript o valor exato
+        view: 'mercado' as const, // 'as const' informa ao TypeScript o valor exato
         nftId: nft.id,
       }),
     });
@@ -68,11 +68,10 @@ export const MoreFromCollectionSection: React.FC = () => {
             <button
               key={dotIndex}
               onClick={() => setActivePageIndex(dotIndex)}
-              className={`w-2.5 h-2.5 rounded-full transition-all cursor-pointer border ${
-                isActive
-                  ? 'bg-[#D28A4C] border-[#D28A4C]'
-                  : 'bg-transparent border-[#3D3024] hover:border-[#D28A4C]'
-              }`}
+              className={`w-2.5 h-2.5 rounded-full transition-all cursor-pointer border ${isActive
+                ? 'bg-[#D28A4C] border-[#D28A4C]'
+                : 'bg-transparent border-[#3D3024] hover:border-[#D28A4C]'
+                }`}
               aria-label={`Ir para a página ${dotIndex + 1}`}
             />
           );

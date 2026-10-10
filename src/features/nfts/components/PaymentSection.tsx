@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import { PurchaseSuccessModal } from './PurchaseSuccessModal';
-import { useCart } from '@/context/CartContext'; // 👈 Import do contexto dinâmico
+import { useCart } from '@/context/CartContext'; // Import do contexto dinâmico
 
 export const PaymentSection: React.FC = () => {
-  const { cart, totalPrice, clearCart } = useCart(); // 👈 Lendo o carrinho global
+  const { cart, totalPrice, clearCart } = useCart(); // Lendo o carrinho global
   const [selectedWallet, setSelectedWallet] = useState<'all' | 'metamask' | 'coinbase'>('coinbase');
   const [useOtherWallet, setUseOtherWallet] = useState(false);
   const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
@@ -39,7 +39,7 @@ export const PaymentSection: React.FC = () => {
 
   const handleCloseSuccessModal = () => {
     setIsSuccessModalOpen(false);
-    clearCart(); // 👈 Limpa o carrinho ao fechar o modal de compra realizada
+    clearCart(); // Limpa o carrinho ao fechar o modal de compra realizada
   };
 
   if (cart.length === 0 && !isSuccessModalOpen) {
@@ -81,7 +81,7 @@ export const PaymentSection: React.FC = () => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-        {/* ================= LADO ESQUERDO: PERFIL DO COLECIONADOR (7 COLS) ================= */}
+        {/* LADO ESQUERDO: PERFIL DO COLECIONADOR (7 COLS)*/}
         <div className="lg:col-span-7 space-y-6">
           <h2 className="text-base font-bold text-white uppercase tracking-wider">
             Perfil do colecionador
@@ -253,7 +253,7 @@ export const PaymentSection: React.FC = () => {
           </div>
         </div>
 
-        {/* ================= LADO DIREITO: SEUS NFTS E RESUMO (5 COLS) ================= */}
+        {/* LADO DIREITO: SEUS NFTS E RESUMO (5 COLS)  */}
         <div className="lg:col-span-5 space-y-6">
           {/* Título Seus NFTs + Tabela Dinâmica */}
           <div>
@@ -352,11 +352,10 @@ export const PaymentSection: React.FC = () => {
             {/* Opção 1: Multi-wallet */}
             <div
               onClick={() => setSelectedWallet('all')}
-              className={`border rounded-xl p-3 flex items-center gap-3 cursor-pointer transition-all ${
-                selectedWallet === 'all'
+              className={`border rounded-xl p-3 flex items-center gap-3 cursor-pointer transition-all ${selectedWallet === 'all'
                   ? 'border-[#D28A4C] bg-[#1A1510]'
                   : 'border-[#261E17] bg-[#1A1510]/50 hover:border-[#3D3024]'
-              }`}
+                }`}
             >
               <div className="w-4 h-4 rounded-full border border-[#D28A4C] flex items-center justify-center shrink-0">
                 {selectedWallet === 'all' && (
@@ -371,11 +370,10 @@ export const PaymentSection: React.FC = () => {
             {/* Opção 2: MetaMask */}
             <div
               onClick={() => setSelectedWallet('metamask')}
-              className={`border rounded-xl p-3 flex items-center gap-3 cursor-pointer transition-all ${
-                selectedWallet === 'metamask'
+              className={`border rounded-xl p-3 flex items-center gap-3 cursor-pointer transition-all ${selectedWallet === 'metamask'
                   ? 'border-[#D28A4C] bg-[#1A1510]'
                   : 'border-[#261E17] bg-[#1A1510]/50 hover:border-[#3D3024]'
-              }`}
+                }`}
             >
               <div className="w-4 h-4 rounded-full border border-[#D28A4C] flex items-center justify-center shrink-0">
                 {selectedWallet === 'metamask' && (
@@ -388,11 +386,10 @@ export const PaymentSection: React.FC = () => {
             {/* Opção 3: Coinbase Wallet */}
             <div
               onClick={() => setSelectedWallet('coinbase')}
-              className={`border rounded-xl p-3 flex items-center gap-3 cursor-pointer transition-all ${
-                selectedWallet === 'coinbase'
+              className={`border rounded-xl p-3 flex items-center gap-3 cursor-pointer transition-all ${selectedWallet === 'coinbase'
                   ? 'border-[#D28A4C] bg-[#1A1510]'
                   : 'border-[#261E17] bg-[#1A1510]/50 hover:border-[#3D3024]'
-              }`}
+                }`}
             >
               <div className="w-4 h-4 rounded-full border border-[#D28A4C] flex items-center justify-center shrink-0">
                 {selectedWallet === 'coinbase' && (

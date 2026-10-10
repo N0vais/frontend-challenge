@@ -43,11 +43,10 @@ export const FeaturedBannersSection: React.FC = () => {
             <button
               key={page}
               onClick={() => setCurrentPage(page)}
-              className={`w-8 h-8 rounded-md text-xs font-bold transition-all cursor-pointer flex items-center justify-center ${
-                isActive
+              className={`w-8 h-8 rounded-md text-xs font-bold transition-all cursor-pointer flex items-center justify-center ${isActive
                   ? 'bg-[#D28A4C] text-[#0F0C08]'
                   : 'bg-[#1A1510] text-[#A89F91] border border-[#261E17] hover:border-[#D28A4C] hover:text-[#F3E5D8]'
-              }`}
+                }`}
             >
               {page}
             </button>
@@ -114,21 +113,4 @@ export const FeaturedBannersSection: React.FC = () => {
     </section>
   );
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
